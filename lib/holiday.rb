@@ -42,7 +42,7 @@ end
 
 def add_new_holiday_with_supplies(holiday_hash, season, holiday_name, supply_array)
   # code here
-  holiday_hash[:fall][:holiday_name] = supply_array
+  holiday_hash[season][:] = supply_array
   return holiday_hash[:fall][:holiday_name]
   
   # remember to return the updated hash
@@ -74,6 +74,20 @@ end
 
 
 
-puts add_new_holiday_with_supplies
+puts add_new_holiday_with_supplies(holiday_supplies = {
+  :winter => {
+    :christmas => ["Lights", "Wreath"],
+    :new_years => ["Party Hats"]
+  },
+  :summer => {
+    :fourth_of_july => ["Fireworks", "BBQ"]
+  },
+  :fall => {
+    :thanksgiving => ["Turkey"]
+  },
+  :spring => {
+    :memorial_day => ["BBQ"]
+  }
+}, )
 
 
